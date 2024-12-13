@@ -38,6 +38,23 @@ cron.database_name = '${SINGLE_DB}'
 password_encryption= '${PASSWORD_AUTHENTICATION}'
 timezone='${TIMEZONE}'
 cron.use_background_workers = on
+
+
+logging_collector='${LOGGING_COLLECTOR}'
+log_directory='${LOG_DIRECTORY}'
+log_filename='${LOG_FILENAME}'
+log_rotation_age='${LOG_ROTATION_AGE}'
+log_rotation_size='${LOG_ROTATION_SIZE}'
+log_truncate_on_rotation='${LOG_TRUNCATE_ON_ROTATION}'
+log_lock_waits='${LOG_LOCK_WAITS}'
+log_duration='${LOG_DURATION}'
+log_statement='${LOG_STATEMENT}'
+log_min_duration_statement='${LOG_MIN_DURATION_STATEMENT}'
+log_connections='${LOG_CONNECTIONS}'
+log_disconnections='${LOG_DISCONNECTS}'
+log_line_prefix='${LOG_LINE_PREFIX}'
+log_timezone='${LOG_TIMEZONE}'
+
 EOF
 
 echo "include 'postgis.conf'" >> "${CONF}"

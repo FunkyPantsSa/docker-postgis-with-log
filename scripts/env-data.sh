@@ -264,6 +264,64 @@ if [ -z "${SSL_KEY_FILE}" ]; then
 	SSL_KEY_FILE='/etc/ssl/private/ssl-cert-snakeoil.key'
 fi
 
+# log
+if [ -z "${LOGGING_COLLECTOR}" ]; then
+  LOGGING_COLLECTOR='off'
+fi
+
+if [ -z "${LOG_DIRECTORY}" ]; then
+  LOG_DIRECTORY='pg_log'
+fi
+
+if [ -z "${LOG_FILENAME}" ]; then
+  LOG_FILENAME='postgresql-%Y-%m-%d_%H%M%S.log'
+fi
+
+if [ -z "${LOG_ROTATION_AGE}" ]; then
+  LOG_ROTATION_AGE='1d'
+fi
+
+if [ -z "${LOG_ROTATION_SIZE}" ]; then
+  LOG_ROTATION_SIZE='100MB'
+fi
+
+if [ -z "${LOG_TRUNCATE_ON_ROTATION}" ]; then
+  LOG_TRUNCATE_ON_ROTATION='on'
+fi
+
+if [ -z "${LOG_LOCK_WAITS}" ]; then
+  LOG_LOCK_WAITS='on'
+fi
+
+if [ -z "${LOG_DURATION}" ]; then
+  LOG_DURATION='on'
+fi
+
+if [ -z "${LOG_STATEMENT}" ]; then
+  LOG_STATEMENT='all'
+fi
+
+if [ -z "${LOG_MIN_DURATION_STATEMENT}" ]; then
+  LOG_MIN_DURATION_STATEMENT='20'
+fi
+
+if [ -z "${LOG_CONNECTIONS}" ]; then
+  LOG_CONNECTIONS='on'
+fi
+
+if [ -z "${LOG_DISCONNECTS}" ]; then
+  LOG_DISCONNECTS='on'
+fi
+
+if [ -z "${LOG_LINE_PREFIX}" ]; then
+  LOG_LINE_PREFIX='%m [%p]: [%l-1] %u@%d '
+fi
+
+if [ -z "${LOG_TIMEZONE}" ]; then
+  LOG_TIMEZONE='Etc/UTC'
+fi
+
+
 # SSL mode
 function postgres_ssl_setup() {
   if [ -z "${PGSSLMODE}" ]; then
