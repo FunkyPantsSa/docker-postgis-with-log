@@ -1,3 +1,36 @@
+
+
+#  changelog
+
+add log file.
+The current version has many dependencies failing to download, so I rewrote the Dockerfile to build a usable image.
+
+
+
+
+| env                 | image_env            | default_value        |
+|---------------------|----------------------|-------------|
+| logging_collector   | LOGGING_COLLECTOR    | off         |
+| log_directory       | LOG_DIRECTORY        | pg_log      |
+| log_filename        | LOG_FILENAME         | postgresql-%Y-%m-%d_%H%M%S.log         |
+| log_rotation_age    | LOG_ROTATION_AGE     | 1d          |
+| log_rotation_size   | LOG_ROTATION_SIZE    | 100MB       |
+| log_truncate_on_rotation | LOG_TRUNCATE_ON_ROTATION | on         |
+| log_lock_waits      | LOG_LOCK_WAITS       | on          |
+| log_duration        | LOG_DURATION         | on          |
+| log_statement       | LOG_STATEMENT        | all         |
+| log_min_duration_statement | LOG_MIN_DURATION_STATEMENT | 20        |
+| log_connections     | LOG_CONNECTIONS      | on          |
+| log_disconnections  | LOG_DISCONNECTS      | on          |
+| log_line_prefix     | LOG_LINE_PREFIX      | %m [%p]: [%l-1] %u@%d           |
+| log_timezone        | LOG_TIMEZONE         | Etc/UTC     |
+
+
+
+
+
+
+
 [![Scenario Tests](https://github.com/kartoza/docker-postgis/actions/workflows/build-latest.yaml/badge.svg?branch=develop&event=push)](https://github.com/kartoza/docker-postgis/actions/workflows/build-latest.yaml)
 [![deploy-image](https://github.com/kartoza/docker-postgis/actions/workflows/deploy-image.yaml/badge.svg)](https://github.com/kartoza/docker-postgis/actions/workflows/deploy-image.yaml)
 
